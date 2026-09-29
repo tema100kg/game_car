@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Осенний драйв</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sky"></div>
+  <div class="hills"></div>
+  <div id="leaf-layer" class="leaf-layer" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <header class="hud">
+      <div class="badge">
+        <span class="badge-label">Счёт</span>
+        <strong id="score">0</strong>
+      </div>
+      <h1>Осенний драйв</h1>
+      <div class="badge">
+        <span class="badge-label">Рекорд</span>
+        <strong id="best">0</strong>
+      </div>
+    </header>
+
+    <div class="stage">
+      <canvas id="game" width="480" height="720"></canvas>
+
+      <div id="overlay" class="overlay">
+        <div class="card" id="start-card">
+          <p class="season">Мультяшная осень</p>
+          <h2>Объезжай препятствия!</h2>
+          <p class="hint">
+            ← → или A D — смена полосы<br />
+            На телефоне — стрелки внизу
+          </p>
+          <button type="button" id="start-btn" class="btn">Поехали</button>
+        </div>
+
+        <div class="card hidden" id="over-card">
+          <p class="season">Ай-ай-ай</p>
+          <h2>Столкновение!</h2>
+          <p class="hint">Твой счёт: <span id="final-score">0</span></p>
+          <button type="button" id="again-btn" class="btn">Ещё раз</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button type="button" id="left-btn" class="pad" aria-label="Влево">◀</button>
+      <button type="button" id="right-btn" class="pad" aria-label="Вправо">▶</button>
+    </div>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
